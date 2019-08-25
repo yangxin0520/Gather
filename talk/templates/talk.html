@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gather社区</title>
+    <meta name="description" content="A Digital Agency Website landing page template built"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+    <link href="{{ url_for('talk.static', filename = 'css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('talk.static', filename = 'css/main.css') }}" rel="stylesheet">
+</head>
+<body id="top">
+
+{#控制首页第一界面颜色#}
+<header>
+    <div class="container pt-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-0"><a class="text-white navbar-brand"
+                                                                                href="#">Gather社区</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#da-navbarNav"
+                    aria-controls="da-navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="da-navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">首页</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">校园服务</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">技术分享</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">资源共享</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">Gather夜话</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">三行情书</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">关于我们</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">关于我们</a></li>
+                </ul>
+                <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                    {% if user %}
+                        <button type="button" class="btn btn-default"><a href="#">{{ user.username }}</a></button>
+                        <button type="button" class="btn btn-default"><a href="#">注销</a></button>
+                    {% else %}
+                        <button type="button" class="btn btn-default"><a href="#">登陆</a></button>
+                        <button type="button" class="btn btn-default"><a href="#">注册</a></button>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="da-home-page-text" data-aos="fade-right" data-aos-duration="1000">
+        <div class="container">
+            <div class="col-md-10 col-sm-12 px-0 mx-0">
+                <h2 class="display-3" style="margin-left:-6px;"> Gather夜话</h2>
+                <h3 class="h5 mt-3">躲过对酒当歌的夜 躲不过四下无人的街</h3>
+                <a class="smooth-scroll btn btn-outline-light mt-4" href="#next">Learn More</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-content" id="next">
+    <div>
+        <div class="da-section da-work bg-secondary" id="talk">
+            <div class="container">
+                <div class="h3 pb-3 text-center text-white" data-aos="fade-up">Gather夜话</div>
+                <p class="px-5 pb-5 text-center text-white" data-aos="fade-up">1.开放时间：22:00-7:00<br>2.1是写这着玩的</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-3" data-aos="flip-left">
+                            <div class="card-body mt-4 mb-1 text-center">
+                                <div class="h4 pb-3">@某某靓仔</div>
+                                <p>还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3" data-aos="flip-left">
+                            <div class="card-body mt-4 mb-1 text-center">
+                                <div class="h4 pb-3">@某某靓仔</div>
+                                <p>还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3" data-aos="flip-left">
+                            <div class="card-body mt-4 mb-1 text-center">
+                                <div class="h4 pb-3">@某某靓仔</div>
+                                <p>还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3" data-aos="flip-left">
+                            <div class="card-body mt-4 mb-1 text-center">
+                                <div class="h4 pb-3">@某某靓仔</div>
+                                <p>还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3" data-aos="flip-left">
+                            <div class="card-body mt-4 mb-1 text-center">
+                                <div class="h4 pb-3">@某某靓仔</div>
+                                <p>还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-3" data-aos="flip-left">
+                            <div class="card-body mt-4 mb-1 text-center">
+                                <div class="h4 pb-3">@某某靓仔</div>
+                                <p>还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?还要我怎样我怎样怎样?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-secondary da-section">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="h2">Gather</div>
+                <p class="mb-0">79734777@qq.com</p>
+            </div>
+            <div class="col-md-4">
+                <div class="h6 pb-2">友情链接</div>
+                <ul>
+                    <li><a class="da-social-link" href="#">这是第一个</a></li>
+                    <li><a class="da-social-link" href="#">这是第二个</a></li>
+                    <li><a class="da-social-link" href="#">这是第三个</a></li>
+                    <li><a class="da-social-link" href="#">这是第四个</a></li>
+                    <li><a class="da-social-link" href="#">这是第五个</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="h6 pb-2">Copyright</div>
+                <p>&copy; 2019 . All rights reserved.</p>
+                <p>本站已运行XX天XX小时XX分XX秒</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="scrolltop">
+    <button class="btn btn-primary"><span class="icon"><i class="fas fa-angle-up fa-2x"></i></span></button>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+<script src="https://cdn.bootcss.com/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script src="{{ url_for('talk.static', filename = 'js/main.js') }}"></script>
+</body>
+</html>

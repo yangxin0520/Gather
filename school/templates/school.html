@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gather社区</title>
+    <meta name="description" content="A Digital Agency Website landing page template built"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+    <link href="{{ url_for('school.static', filename = 'css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('school.static', filename = 'css/main.css') }}" rel="stylesheet">
+</head>
+<body id="top">
+
+{#控制首页第一界面颜色#}
+<header>
+    <div class="container pt-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-0"><a class="text-white navbar-brand"
+                                                                                href="#">Gather社区</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#da-navbarNav"
+                    aria-controls="da-navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-uppercase" id="da-navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">首页</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">校园服务</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">技术分享</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">资源共享</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">Gather夜话</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">三行情书</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">关于我们</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">关于我们</a></li>
+                </ul>
+                <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                    {% if user %}
+                        <button type="button" class="btn btn-default"><a href="#">{{ user.username }}</a></button>
+                        <button type="button" class="btn btn-default"><a href="{{ url_for('logout') }}">注销</a></button>
+                    {% else %}
+                        <button type="button" class="btn btn-default"><a href="{{ url_for('login') }}">登陆</a></button>
+                        <button type="button" class="btn btn-default"><a href="{{ url_for('register') }}">注册</a></button>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="da-home-page-text" data-aos="fade-right" data-aos-duration="1000">
+        <div class="container">
+            <div class="col-md-10 col-sm-12 px-0 mx-0">
+                <h2 class="display-3" style="margin-left:-6px;">校园服务</h2>
+                <h3 class="h5 mt-3">绩点查询、用电查询、宿舍卫生成绩、四六级成绩查询</h3>
+                <a class="smooth-scroll btn btn-outline-light mt-4" href="#next">Learn More</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-content" id="next">
+    <div>
+        <div class="da-section bg-light" id="services">
+            <div class="da-services">
+                <div class="container text-center">
+                    <div class="h3 pb-5 text-center" data-aos="fade-up">查询服务</div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body py-5" data-aos="zoom-in" data-aos-duration="500">
+                                    <div class="text-primary"><i class="pb-3 fas fa-code fa-3x"></i>
+                                        <p class="font-weight-bold">绩点查询</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body py-5" data-aos="zoom-in" data-aos-duration="1000">
+                                    <div class="text-primary"><i class="pb-3 fab fa-buromobelexperte fa-3x"></i>
+                                        <p class="font-weight-bold">用电查询</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body py-5" data-aos="zoom-in" data-aos-duration="1500">
+                                    <div class="text-primary"><i class="pb-3 fas fa-cubes fa-3x"></i>
+                                        <p class="font-weight-bold">宿舍卫生成绩查询</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body py-5" data-aos="zoom-in" data-aos-duration="2000">
+                                    <div class="text-primary"><i class="pb-3 fas fa-eye fa-3x"></i>
+                                        <p class="font-weight-bold">四六级成绩查询</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="bg-secondary da-section">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="h2">Gather</div>
+                <p class="mb-0">79734777@qq.com</p>
+            </div>
+            <div class="col-md-4">
+                <div class="h6 pb-2">友情链接</div>
+                <ul>
+                    <li><a class="da-social-link" href="#">这是第一个</a></li>
+                    <li><a class="da-social-link" href="#">这是第二个</a></li>
+                    <li><a class="da-social-link" href="#">这是第三个</a></li>
+                    <li><a class="da-social-link" href="#">这是第四个</a></li>
+                    <li><a class="da-social-link" href="#">这是第五个</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="h6 pb-2">Copyright</div>
+                <p>&copy; 2019 . All rights reserved.</p>
+                <p>本站已运行XX天XX小时XX分XX秒</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="scrolltop">
+    <button class="btn btn-primary"><span class="icon"><i class="fas fa-angle-up fa-2x"></i></span></button>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+<script src="https://cdn.bootcss.com/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script src="{{ url_for('school.static', filename = 'js/main.js') }}"></script>
+</body>
+</html>
