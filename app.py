@@ -13,6 +13,7 @@ from techn.techn import techn_ob
 from talk.talk import talk_ob
 from latter.latter import latter_ob
 from about.about import about_ob
+from login_register.login_register import login_register_ob
 
 
 app = Flask(__name__)
@@ -27,6 +28,8 @@ app.register_blueprint(techn_ob, url_prefix='/techn')
 app.register_blueprint(talk_ob, url_prefix='/talk')
 app.register_blueprint(latter_ob, url_prefix='/latter')
 app.register_blueprint(about_ob, url_prefix='/about')
+app.register_blueprint(login_register_ob, url_prefix='/login')
+app.register_blueprint(login_register_ob, url_prefix='/register')
 
 
 

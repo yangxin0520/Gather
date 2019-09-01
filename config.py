@@ -7,8 +7,8 @@ debug = True
 DIALECT = 'mysql'
 DRIVER = 'mysqlconnector'
 USERNAME = 'root'
-PASSWORD = 'mima198074'
-HOST = '47.95.243.26'
+PASSWORD = 'root'
+HOST = '127.0.0.1'
 PORT = '3306'
 DATABASE = 'flask'
 

@@ -25,13 +25,13 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- bootsnav -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_register/bootsnav.css') }}" >
+    <link rel="stylesheet" href="{{ url_for('login_register.static', filename='css/bootsnav.css') }}" >
 
     <!--style.css-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_register/login_register.css') }}">
+    <link rel="stylesheet" href="{{ url_for('login_register.static', filename='css/login_register.css') }}">
 
     <!--responsive.css-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_register/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('login_register.static', filename='css/responsive.css') }}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="signin-form">
-                            <form action="{{ url_for('login') }}" method="post">
+                            <form action="{{ url_for('login_register.login_fc') }}" method="post">
                                 <div class="form-group">
                                     <label for="signin_form">用户名</label>
                                     <input type="text" class="form-control" placeholder="输入用户名" name="username">
@@ -99,7 +99,7 @@
                         <div class="signin-footer">
                             <p>
                                 没有账号？
-                                <a href="{{ url_for('register') }}">点我注册</a>
+                                <a href="{{ url_for('login_register.register_fc') }}">点我注册</a>
                             </p>
                         </div><!--/.signin-footer -->
                     </div><!--/.col-->
@@ -141,7 +141,7 @@
 
 
 <!--Custom JS-->
-<script src="{{ url_for('static', filename='js/login_register/custom.js') }}"></script>
+<script src="{{ url_for('login_register.static', filename='js/custom.js') }}"></script>
 
 </body>
 

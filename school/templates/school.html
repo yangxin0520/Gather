@@ -25,23 +25,22 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse text-uppercase" id="da-navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">首页</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">校园服务</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">技术分享</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="{{ url_for('home.home_fc') }}">首页</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="{{ url_for('school.school_fc') }}">校园服务</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="{{ url_for('techn.techn_fc') }}">技术分享</a></li>
                     <li class="nav-item"><a class="nav-link smooth-scroll" href="#">资源共享</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">Gather夜话</a>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="{{ url_for('talk.talk_fc') }}">Gather夜话</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">三行情书</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">关于我们</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#">关于我们</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="{{ url_for('latter.latter_fc') }}">三行情书</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="{{ url_for('about.about_fc') }}">关于我们</a></li>
                 </ul>
                 <div class="btn-group btn-group-sm" role="group" aria-label="...">
                     {% if user %}
                         <button type="button" class="btn btn-default"><a href="#">{{ user.username }}</a></button>
-                        <button type="button" class="btn btn-default"><a href="{{ url_for('logout') }}">注销</a></button>
+                        <button type="button" class="btn btn-default"><a href="#">注销</a></button>
                     {% else %}
-                        <button type="button" class="btn btn-default"><a href="{{ url_for('login') }}">登陆</a></button>
-                        <button type="button" class="btn btn-default"><a href="{{ url_for('register') }}">注册</a></button>
+                        <button type="button" class="btn btn-default"><a href="{{ url_for('login_register.login_fc') }}">登陆</a></button>
+                        <button type="button" class="btn btn-default"><a href="{{ url_for('login_register.register_fc') }}">注册</a></button>
                     {% endif %}
                 </div>
             </div>

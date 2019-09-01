@@ -28,7 +28,10 @@
         <option value="$MODULE_DIR$/home/templates" />
         <option value="$MODULE_DIR$/school/templates" />
         <option value="$MODULE_DIR$/techn/templates" />
-        <option value="$MODULE_DIR$/home - 副本/templates" />
+        <option value="$MODULE_DIR$/latter/templates" />
+        <option value="$MODULE_DIR$/talk/templates" />
+        <option value="$MODULE_DIR$/about/templates" />
+        <option value="$MODULE_DIR$/login_register/templates" />
       </list>
     </option>
   </component>
