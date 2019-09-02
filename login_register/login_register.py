@@ -54,7 +54,7 @@ def register_fc():
                 # 跳转到登陆界面
                 return render_template('login.html')
 
-# @app.route('/logout/')
-# def logout():
-#     session.clear()
-#     return redirect(url_for('login'))
+@login_register_ob.route('/logout/')
+def logout_fc():
+    session.clear()
+    return redirect(url_for('home.home_fc'))

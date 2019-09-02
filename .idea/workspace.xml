@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b047ec82-f785-478b-a93f-ce0e65017d64" name="Default Changelist" comment="" />
+    <list default="true" id="b047ec82-f785-478b-a93f-ce0e65017d64" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/latter/templates/latter.html" beforeDir="false" afterPath="$PROJECT_DIR$/latter/templates/latter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_register/login_register.py" beforeDir="false" afterPath="$PROJECT_DIR$/login_register/login_register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school/templates/school.html" beforeDir="false" afterPath="$PROJECT_DIR$/school/templates/school.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/talk/templates/talk.html" beforeDir="false" afterPath="$PROJECT_DIR$/talk/templates/talk.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,19 +103,32 @@
       <workItem from="1566561632969" duration="10326000" />
       <workItem from="1566743308728" duration="131000" />
       <workItem from="1567340062765" duration="3382000" />
-      <workItem from="1567353947827" duration="301000" />
+      <workItem from="1567353947827" duration="744000" />
+      <workItem from="1567390303506" duration="655000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -115,6 +136,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Gather2_0$Gather2_0.coverage" NAME="Gather2.0 Coverage Results" MODIFIED="1567343460435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Gather$Gather2_0.coverage" NAME="Gather2.0 Coverage Results" MODIFIED="1567354291724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Gather$Gather2_0.coverage" NAME="Gather2.0 Coverage Results" MODIFIED="1567392584367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
