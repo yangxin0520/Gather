@@ -1,60 +1,71 @@
-from flask import Blueprint, render_template, request, session, redirect, url_for
+from flask import Blueprint, render_template, request, session, redirect, url_for, flash
 from models import Users
 from exts import db
+# 表单验证
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import Required, DataRequired, EqualTo, Email
 
 login_register_ob = Blueprint('login_register', __name__, template_folder='./templates', static_folder='static', static_url_path='/login_register/static')
 
 
+class LoginForm(FlaskForm):
+    username = StringField('用户名', validators=[DataRequired()])
+    password = PasswordField('密码', validators=[DataRequired()])
+    submit = SubmitField('提交')
+
+
+class RegisterForm(FlaskForm):
+    username = StringField('用户名', validators=[DataRequired()])
+    email = StringField('邮箱', validators=[DataRequired()])
+    password = PasswordField('密码', validators=[DataRequired()])
+    password2 = PasswordField('确认密码', validators=[DataRequired(), EqualTo('password', '密码填入不一致')])
+    submit = SubmitField('提交')
+
+
 @login_register_ob.route('/login/', methods=['GET', 'POST'])
-def login_fc():
-    # 如果请求是GET请求，则跳转页面到login.html
+def login():
+    login_form = LoginForm()
     if request.method == 'GET':
-        return render_template('login.html')
-    # 如果请求时POST请求，则跳转页面到登陆判断逻辑
+        pass
     else:
-        # 获取前端发送来的用户名和密码
         userid = request.form.get('username')
         password = request.form.get('password')
-        # 在数据库进行username和password匹配
         user_login = Users.query.filter(Users.username == userid, Users.password == password).first()
-        # 如果都匹配正确
         if user_login:
-            # 生成session
             session['session_username'] = userid
             return redirect(url_for('home.home_fc'))
         else:
             return '请检测用户名或者密码输入是否正确'
+    return render_template('login.html', login_form=login_form)
 
 
 @login_register_ob.route('/register/', methods=['GET', 'POST'])
-def register_fc():
+def register():
+    register_form = RegisterForm()
     if request.method == 'GET':
-        return render_template('register.html')
+        pass
     else:
         userid = request.form.get('username')
         email = request.form.get('email')
-        password1 = request.form.get('password1')
+        password = request.form.get('password')
         password2 = request.form.get('password2')
-        # 将邮箱与数据库已知数据对比
-        user_register = Users.query.filter(Users.email == email).first()
-        # 如果已存在该邮箱
-        if user_register:
-            return '该邮箱已经被注册'
-        # 如果邮箱没有重复，那么继续往下判断两次输入密码
-        else:
-            if password1 != password2:
-                return '两次输入的密码不一样，请检查后输入'
+        if register_form.validate_on_submit():
+            print(userid)
+            user_register = Users.query.filter(Users.email == email).first()
+            if user_register:
+                return '该邮箱已经注册'
             else:
-                # 如果两次密码输入一致，开始像数据库中插入数据
-                user = Users(username=userid, email=email, password=password1)
-                # 插入命令
+                user = Users(username=userid, email=email, password=password)
                 db.session.add(user)
-                # 确认插入命令
                 db.session.commit()
-                # 跳转到登陆界面
-                return render_template('login.html')
+                return redirect(url_for('login_register.login'))
+        else:
+            flash('输入有误')
+    return render_template('register.html', register_form=register_form)
+
 
 @login_register_ob.route('/logout/')
-def logout_fc():
+def logout():
     session.clear()
     return redirect(url_for('home.home_fc'))
