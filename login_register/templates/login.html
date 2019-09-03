@@ -32,35 +32,32 @@
 
     <!--responsive.css-->
     <link rel="stylesheet" href="{{ url_for('login_register.static', filename='css/responsive.css') }}">
-
+    <!--跳转动画-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('login_register.static', filename='css/dialog.css') }}">
 
 </head>
 
 <body>
-{#<form method="post">#}
-{#    {{ form.username.label }}{{ form.username(class='form-control') }}#}
-{#    {{ form.email.label }}{{ form.email }}#}
-{#    {{ form.password.label }}{{ form.password }}#}
-{#    {{ form.submit }}#}
-{#</form>#}
+
 <!-- signin end -->
 <section class="signin popup-in">
     <div class="container">
+
         <div class="sign-content popup-in-content">
             <div class="popup-in-txt">
                 <h2>登陆</h2>
+
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="signin-form">
-                            <form action="{{ url_for('login_register.login') }}" method="post">
-                                {{ login_form.csrf_token() }}
+                            <form>
                                 <div class="form-group">
-                                    {{ login_form.username.label }}<br>
-                                    {{ login_form.username(class='form-control') }}
+                                    <label for="signin_form">用户名</label>
+                                    <input type="text" class="form-control" placeholder="输入用户名" id="username">
                                 </div><!--/.form-group -->
                                 <div class="form-group">
-                                    {{ login_form.password.label }}<br>
-                                    {{ login_form.password(class='form-control') }}
+                                    <label for="signin_form">密码</label>
+                                    <input type="password" class="form-control" placeholder="输入密码" id="password">
                                 </div><!--/.form-group -->
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -76,23 +73,23 @@
                                                     <li>
                                                         <a href="#">忘记账号或者密码？</a>
                                                     </li>
+
                                                 </ul>
                                             </div><!--/.awesome-checkbox-list -->
                                         </div><!--/.signin-password -->
                                     </div><!--/.col -->
                                 </div><!--/.row -->
-                                {{ login_form.submit(class='btn signin_btn') }}
                             </form><!--/form -->
                         </div><!--/.signin-form -->
                     </div><!--/.col -->
                 </div><!--/.row -->
-
+                <input type="submit" class="btn signin_btn" value="登陆" id="login_js">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="signin-footer">
                             <p>
                                 没有账号？
-                                <a href="{{ url_for('login_register.register') }}">点我注册</a>
+                                <a href="{{ url_for('login_register.register_fc') }}">点我注册</a>
                             </p>
                         </div><!--/.signin-footer -->
                     </div><!--/.col-->
@@ -126,15 +123,60 @@
 <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <!-- bootsnav js -->
-<script src="{{ url_for('static', filename='js/login_register/bootsnav.js') }}"></script>
+<script src="{{ url_for('login_register.static', filename='js/bootsnav.js') }}"></script>
 
 <!-- jquery.sticky.js -->
 <script src="https://cdn.bootcss.com/jquery.sticky/1.0.4/jquery.sticky.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
+<!--跳转动画-->
+<script type="text/javascript" src="{{ url_for('login_register.static', filename='js/zepto.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('login_register.static', filename='js/dialog.min.js') }}"></script>
+
 
 <!--Custom JS-->
 <script src="{{ url_for('login_register.static', filename='js/custom.js') }}"></script>
+{#以后ajax就可以这样写了#}
+<script>
+    $(function () {
+        $("#login_js").on('click', function () {
+            $.ajax({
+                url:"{{ url_for('login_register.login_fc') }}",
+                dataType:"json",
+                async:true,
+                {#获取传送给后端的数据#}
+                data:{
+                    "username": $('#username').val(),
+                    "password": $('#password').val()
+                },
+                {#POST大小写都行#}
+                type:"POST",
+                beforeSend:function(){
+                },
+                {#成功了就进行这下面的操作#}
+                success:function(data){
+                    if (data.status===1){
+                        {#这里的回调函数比较重要实现动画加跳转#}
+                        popup({type:'load',msg:"验证登陆中",delay:1000,callBack:function(){
+	                        popup({type:"success",msg:"登陆成功 正在跳转",delay:1500,callBack:function () {
+                                    window.location.href='{{ url_for('home.home_fc') }}'
+                                }});
+                        }});
+
+                    }else if (data.status===0){
+                        popup({type:'error',msg:"登陆失败",delay:2000,bg:true,clickDomCancel:true});
+                    }
+                },
+                complete:function(){
+                },
+                {#报错#}
+                error:function(){
+                    alert('出错了')
+                }
+            });
+        })
+    })
+</script>
 
 </body>
 

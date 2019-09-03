@@ -22,7 +22,6 @@ app.config.from_object(config)
 db.init_app(app)
 # 用于session配置
 app.config['SECRET_KEY'] = os.urandom(24)
-# 蓝图路由部分
 app.register_blueprint(home_ob, url_prefix='/')
 app.register_blueprint(school_ob, url_prefix='/school')
 app.register_blueprint(techn_ob, url_prefix='/techn')
