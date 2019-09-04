@@ -23,7 +23,6 @@ def login_fc():
         # 获取前端发送来的用户名和密码
         userid = request.form.get('username')
         password = request.form.get('password')
-        print(userid)
         # 在数据库进行username和password匹配
         user_login = Users.query.filter(Users.username == userid, Users.password == password).first()
         # 如果都匹配正确

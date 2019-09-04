@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html  lang="en">
 
@@ -37,82 +36,85 @@
 
 </head>
 
-<body>
+	<body>
 
-<!-- signin end -->
-<section class="signin popup-in">
-    <div class="container">
+		<!-- signin end -->
+		<section class="signin popup-in">
+			<div class="container">
 
-        <div class="sign-content popup-in-content">
-            <div class="popup-in-txt">
-                <h2>登陆</h2>
+				<div class="sign-content popup-in-content">
+					<div class="popup-in-txt">
+						<h2>登陆</h2>
 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="signin-form">
-                            <form>
-                                <div class="form-group">
-                                    <label for="signin_form">用户名</label>
-                                    <input type="text" class="form-control" placeholder="输入用户名" id="username">
-                                </div><!--/.form-group -->
-                                <div class="form-group">
-                                    <label for="signin_form">密码</label>
-                                    <input type="password" class="form-control" placeholder="输入密码" id="password">
-                                </div><!--/.form-group -->
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="signin-password">
-                                            <div class="awesome-checkbox-list">
-                                                <ul class="unstyled centered">
-                                                    <li>
-                                                        <input class="styled-checkbox" id="styled-checkbox-2"
-                                                               type="checkbox" value="value2">
-                                                        <label for="styled-checkbox-2">记住密码</label>
-                                                    </li>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="signin-form">
+									<form>
+										<div class="form-group">
+										    <label for="signin_form">用户名</label>
+										    <input type="email" class="form-control" id="username" placeholder="请输入用户名">
+										</div><!--/.form-group -->
+										<div class="form-group">
+											<label for="signin_form">密码</label>
+										    <input type="password" class="form-control" id="password" placeholder="请输入密码">
+										</div><!--/.form-group -->
+									</form><!--/form -->
+								</div><!--/.signin-form -->
+							</div><!--/.col -->
+						</div><!--/.row -->
 
-                                                    <li>
-                                                        <a href="#">忘记账号或者密码？</a>
-                                                    </li>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="signin-password">
+									<div class="awesome-checkbox-list">
+										<ul class="unstyled centered">
 
-                                                </ul>
-                                            </div><!--/.awesome-checkbox-list -->
-                                        </div><!--/.signin-password -->
-                                    </div><!--/.col -->
-                                </div><!--/.row -->
-                            </form><!--/form -->
-                        </div><!--/.signin-form -->
-                    </div><!--/.col -->
-                </div><!--/.row -->
-                <input type="submit" class="btn signin_btn" value="登陆" id="login_js">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="signin-footer">
-                            <p>
-                                没有账号？
-                                <a href="{{ url_for('login_register.register_fc') }}">点我注册</a>
-                            </p>
-                        </div><!--/.signin-footer -->
-                    </div><!--/.col-->
-                </div><!--/.row -->
-            </div><!-- .popup-in-txt -->
-        </div><!--/.sign-content -->
-    </div><!--/.container -->
+											<li>
+											    <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
+											    <label for="styled-checkbox-2">记住密码</label>
+											</li>
 
-</section><!--/.signin -->
+											<li>
+											    <a href="#">忘记用户名或者密码?</a>
+											</li>
 
-<!-- signin end -->
+										</ul>
+									</div><!--/.awesome-checkbox-list -->
+								</div><!--/.signin-password -->
+							</div><!--/.col -->
+						</div><!--/.row -->
 
-<!--footer copyright start -->
-<footer class="footer-copyright">
-    <div id="scroll-Top">
-        <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
-    </div><!--/.scroll-Top-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="signin-footer">
+{#									<button type="button" class="btn signin_btn">#}
+{#									sign in#}
+{#									</button>#}
+                                    <input type="submit" class="btn signin_btn" value="登陆" id="login_js">
+									<p>
+										还没有账号?
+										<a href="{{ url_for('login_register.register_fc') }}">点我注册</a>
+									</p>
+								</div><!--/.signin-footer -->
+							</div><!--/.col-->
+						</div><!--/.row -->
+					</div><!-- .popup-in-txt -->
+				</div><!--/.sign-content -->
+			</div><!--/.container -->
 
-</footer><!--/.hm-footer-copyright-->
-<!--footer copyright  end -->
+		</section><!--/.signin -->
 
+		<!-- signin end -->
 
-<!-- Include all js compiled plugins (below), or include individual files as needed -->
+		<!--footer copyright start -->
+		<footer class="footer-copyright">
+			<div id="scroll-Top">
+				<i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+			</div><!--/.scroll-Top-->
+
+		</footer><!--/.hm-footer-copyright-->
+		<!--footer copyright  end -->
+
 
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 
@@ -164,7 +166,9 @@
                         }});
 
                     }else if (data.status===0){
-                        popup({type:'error',msg:"登陆失败",delay:2000,bg:true,clickDomCancel:true});
+                        popup({type:'load',msg:"验证登陆中",delay:1000,callBack:function(){
+	                        popup({type:'error',msg:"请检查账号密码",delay:2000,bg:true,clickDomCancel:true});
+                        }});
                     }
                 },
                 complete:function(){
@@ -177,7 +181,6 @@
         })
     })
 </script>
-
-</body>
+    </body>
 
 </html>

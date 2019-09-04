@@ -37,90 +37,91 @@
 
 </head>
 
-<body>
-<!--[if lte IE 9]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-<![endif]-->
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
 
-<!-- signin end -->
-<section class="signin signup popup-up">
-    <div class="container">
+		<!-- signin end -->
+		<section class="signin signup popup-up">
+			<div class="container">
 
-        <div class="sign-content popup-in-content">
-            <div class="popup-in-txt">
-                <h2>注册</h2>
+				<div class="sign-content popup-in-content">
+					<div class="popup-in-txt">
+						<h2>注册</h2>
 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="signin-form">
-                            <form>
-                                <div class="form-group">
-                                    <label for="signin_form">用户名</label>
-                                    <input type="text" class="form-control" placeholder="输入用户名" id="username">
-                                </div><!--/.form-group -->
-                                <div class="form-group">
-                                    <label for="signin_form">邮箱</label>
-                                    <input type="email" class="form-control" placeholder="在这里输入邮箱" id="email">
-                                </div><!--/.form-group -->
-                                <div class="form-group">
-                                    <label for="signin_form">密码</label>
-                                    <input type="password" class="form-control" placeholder="输入密码" id="password">
-                                </div><!--/.form-group -->
-                                <div class="form-group">
-                                    <label for="signin_form">重复密码</label>
-                                    <input type="password" class="form-control" placeholder="重复输入密码" id="password2">
-                                </div><!--/.form-group -->
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="signin-password">
-                                            <div class="awesome-checkbox-list">
-                                                <ul class="unstyled centered">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="signin-form">
+									<form>
+                                        <div class="form-group">
+											<label for="signin_form">用户名</label>
+										    <input type="text" class="form-control" id="username" placeholder="英文、数字组成">
+										</div><!--/.form-group -->
+										<div class="form-group">
+											<label for="signin_form">邮箱</label>
+										    <input type="email" class="form-control" id="email" placeholder="请输入邮箱">
+										</div><!--/.form-group -->
+										<div class="form-group">
+											<label for="signin_form">密码</label>
+										    <input type="password" class="form-control" id="password" placeholder="请输入密码">
+										</div><!--/.form-group -->
+										<div class="form-group">
+											<label for="signin_form">重复密码</label>
+										    <input type="password" class="form-control" id="password2" placeholder="重复输入密码">
+										</div><!--/.form-group -->
+									</form><!--/form -->
+								</div><!--/.signin-form -->
+							</div><!--/.col -->
+						</div><!--/.row -->
 
-                                                    <li>
-                                                        <input class="styled-checkbox" id="styled-checkbox-2"
-                                                               type="checkbox" value="value2">
-                                                        <label for="styled-checkbox-2"> 我已阅读并同意相关服务条款和隐私政策</label>
-                                                    </li>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="signin-password">
+									<div class="awesome-checkbox-list">
+										<ul class="unstyled centered">
 
-                                                </ul>
-                                            </div><!--/.awesome-checkbox-list -->
-                                        </div><!--/.signin-password -->
-                                    </div><!--/.col -->
-                                </div><!--/.row -->
-                            </form><!--/form -->
-                            <div>
-                                <input type="submit" class="btn signin_btn" value="注册" id="register_js">
-                            </div>
-                        </div><!--/.signin-form -->
-                    </div><!--/.col -->
-                </div><!--/.row -->
+											<li>
+											    <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2">
+											    <label for="styled-checkbox-2">我已阅读并同意相关服务条款和隐私政策</label>
+											</li>
 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="signin-footer">
-                            <p>
-                                已经想起你的账号密码了？
-                                <a href="{{ url_for('login_register.login_fc') }}">登陆</a>
-                            </p>
-                        </div><!--/.signin-footer -->
-                    </div><!--/.col-->
-                </div><!--/.row -->
-            </div><!-- .popup-in-txt -->
-        </div><!--/.sign-content -->
-    </div><!--/.container -->
+											<li></li>
 
-</section><!--/.signin -->
+										</ul>
+									</div><!--/.awesome-checkbox-list -->
+								</div><!--/.signin-password -->
+							</div><!--/.col -->
+						</div><!--/.row -->
 
-<!-- signin end -->
 
-<!--footer copyright start -->
-<footer class="footer-copyright">
-    <div id="scroll-Top">
-        <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
-    </div><!--/.scroll-Top-->
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="signin-footer">
+									<input type="submit" class="btn signin_btn" value="注册" id="register_js">
+									<p>
+										想起账号密码了 ?
+										<a href="{{ url_for('login_register.login_fc') }}">登陆</a>
+									</p>
+								</div><!--/.signin-footer -->
+							</div><!--/.col-->
+						</div><!--/.row -->
+					</div><!-- .popup-in-txt -->
+				</div><!--/.sign-content -->
+			</div><!--/.container -->
 
-</footer><!--/.hm-footer-copyright-->
-<!--footer copyright  end -->
+		</section><!--/.signin -->
+
+		<!-- signin end -->
+
+		<!--footer copyright start -->
+		<footer class="footer-copyright">
+			<div id="scroll-Top">
+				<i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+			</div><!--/.scroll-Top-->
+
+		</footer><!--/.hm-footer-copyright-->
+		<!--footer copyright  end -->
 
 
 <!-- Include all js compiled plugins (below), or include individual files as needed -->
@@ -168,9 +169,13 @@
                 {#成功了就进行这下面的操作#}
                 success:function(data){
                     if (data.status===1){
-                        popup({type:'error',msg:"该邮箱已注册",delay:2000,bg:true,clickDomCancel:true});
+                        popup({type:'load',msg:"验证注册中",delay:1000,callBack:function(){
+	                        popup({type:'error',msg:"该邮箱已注册",delay:2000,bg:true,clickDomCancel:true});
+                        }});
                     }else if (data.status===2){
-                        popup({type:'error',msg:"密码输入不一致",delay:2000,bg:true,clickDomCancel:true});
+                        popup({type:'load',msg:"验证注册中",delay:1000,callBack:function(){
+	                        popup({type:'error',msg:"密码输入不一致",delay:2000,bg:true,clickDomCancel:true});
+                        }});
                     }else if (data.status===3){
                         popup({type:'load',msg:"验证注册中",delay:1000,callBack:function(){
 	                        popup({type:"success",msg:"注册成功 正在跳转",delay:1500,callBack:function () {
@@ -191,6 +196,6 @@
     })
 </script>
 
-</body>
+    </body>
 
 </html>
